@@ -47,7 +47,6 @@ public class App extends Application {
 
         System.out.println("¡Bienvenido al juego de 20 preguntas!");
         System.out.println("Piensa en un animal...");
-        arbol.jugar();
     }
 
 }
