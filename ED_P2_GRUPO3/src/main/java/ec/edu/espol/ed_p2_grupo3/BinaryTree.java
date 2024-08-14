@@ -6,6 +6,7 @@ package ec.edu.espol.ed_p2_grupo3;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -42,17 +43,37 @@ public class BinaryTree<E> {
     }
 
     private NodeBinaryTree<String> construirNodo(ArrayList<String> preguntas, HashMap<String, ArrayList<String>> respuestas, int profundidad) {
-        if (profundidad >= preguntas.size()) {
-            return null; // No más preguntas para hacer, debería ser una hoja
-        }
-
         // Crear un nuevo nodo para la pregunta en esta profundidad
         String pregunta = preguntas.get(profundidad);
         NodeBinaryTree<String> nodo = new NodeBinaryTree<>(pregunta);
 
+        // Verificar si este nodo debería ser una hoja
+        boolean esHoja = true;
+        for (ArrayList<String> respuestaList : respuestas.values()) {
+            if (respuestaList.size() > profundidad && respuestaList.get(profundidad).equals("sí")) {
+                esHoja = false;
+                break;
+            }
+        }
+
+        if (esHoja) {
+            // Si es hoja, asignar el nombre del animal en lugar de una pregunta
+            for (Map.Entry<String, ArrayList<String>> entry : respuestas.entrySet()) {
+                if (entry.getValue().size() > profundidad && entry.getValue().get(profundidad).equals("sí")) {
+                    nodo.setContent(entry.getKey()); // Contenido es el nombre del animal
+                    return nodo;
+                }
+            }
+        }
+
         // Recursivamente construir los subárboles izquierdo (sí) y derecho (no)
-        nodo.setLeftSi(new BinaryTree<>(construirNodo(preguntas, respuestas, profundidad + 1)));
-        nodo.setRightNo(new BinaryTree<>(construirNodo(preguntas, respuestas, profundidad + 1)));
+        BinaryTree<String> subArbolSi = new BinaryTree<>();
+        BinaryTree<String> subArbolNo = new BinaryTree<>();
+        subArbolSi.construirArbol(preguntas, respuestas);
+        subArbolNo.construirArbol(preguntas, respuestas);
+
+        nodo.setLeftSi(subArbolSi);
+        nodo.setRightNo(subArbolNo);
 
         return nodo;
     }
