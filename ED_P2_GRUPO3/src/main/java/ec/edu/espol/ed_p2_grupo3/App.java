@@ -17,12 +17,12 @@ import java.util.Scanner;
  * JavaFX App
  */
 public class App extends Application {
-
+     private int nPreguntas;
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("inicio"), 524, 540);
         stage.setScene(scene);
         stage.show();
     }
@@ -37,8 +37,8 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws IOException {
-        //launch();
-       // Leer el archivo de preguntas
+        launch();
+        /*
         ArrayList<String> preguntas = cargarPreguntas("ArchivoPreguntas.txt");
         HashMap<String, ArrayList<String>> respuestas = cargarRespuestas("ArchivoRespuestas.txt");
 
@@ -47,6 +47,16 @@ public class App extends Application {
 
         System.out.println("¡Bienvenido al juego de 20 preguntas!");
         System.out.println("Piensa en un animal...");
+*/
     }
+
+    public int getnPreguntas() {
+        return nPreguntas;
+    }
+
+    public void setnPreguntas(int nPreguntas) {
+        this.nPreguntas = nPreguntas;
+    }
+    
 
 }

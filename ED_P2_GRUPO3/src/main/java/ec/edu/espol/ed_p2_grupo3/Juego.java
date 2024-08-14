@@ -17,26 +17,30 @@ import java.util.HashMap;
  */
 public class Juego {
     
-    public static HashMap<String, ArrayList<String>> cargarRespuestas(String archivoRespuestas) {
-    HashMap<String, ArrayList<String>> respuestas = new HashMap<>();
-    try (BufferedReader br = new BufferedReader(new FileReader(archivoRespuestas))) {
-        String linea;
-        while ((linea = br.readLine()) != null) {
-            String[] partes = linea.split(" ", 2);
-            String animal = partes[0];
-            ArrayList<String> respuestasAnimal = new ArrayList<>();
-            for (char c : partes[1].trim().toCharArray()) {
-                if (c != ' ') {
-                    respuestasAnimal.add(String.valueOf(c));
-                }
-            }
-            respuestas.put(animal, respuestasAnimal);
-        }
-    } catch (IOException e) {
-        e.printStackTrace();
+    public void Game(){
+        
     }
-    return respuestas;
-}
+    
+    public static HashMap<String, ArrayList<String>> cargarRespuestas(String archivoRespuestas) {
+        HashMap<String, ArrayList<String>> respuestas = new HashMap<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(archivoRespuestas))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(" ", 2);
+                String animal = partes[0];
+                ArrayList<String> respuestasAnimal = new ArrayList<>();
+                for (char c : partes[1].trim().toCharArray()) {
+                    if (c != ' ') {
+                        respuestasAnimal.add(String.valueOf(c));
+                    }
+            }   
+                respuestas.put(animal, respuestasAnimal);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return respuestas;
+    }
     
     public static ArrayList<String> cargarPreguntas (String nombreArchivo) throws IOException{
         ArrayList<String> preguntas = new ArrayList<>();
