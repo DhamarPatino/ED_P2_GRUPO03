@@ -1,35 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="524.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.InicioController">
+<AnchorPane id="AnchorPane" prefHeight="524.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.InicioController">
    <children>
       <ImageView fitHeight="541.0" fitWidth="544.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Imagen2.png" />
          </image>
       </ImageView>
-      <Button fx:id="inicio" layoutX="212.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#start" prefHeight="51.0" prefWidth="129.0" text="Button">
-         <effect>
-            <ImageInput>
-               <source>
-                  <Image url="file:/C:/Users/DHAMAR/Documents/1%20-%20Universidad/Estructura%20de%20datos/Proyecto/ED_P2_GRUPO03/ED_P2_GRUPO3/src/main/resources/ec/edu/espol/ed_p2_grupo3/Imagen6.png" />
-               </source>
-            </ImageInput>
-         </effect>
-         <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-         </padding>
-      </Button>
+      <Button fx:id="inicio" layoutX="248.0" layoutY="408.0" mnemonicParsing="false" onAction="#start" text="inicio" />
    </children>
 </AnchorPane>
