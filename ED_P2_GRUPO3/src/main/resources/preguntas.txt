@@ -1,0 +1,30 @@
+¿Es este animal un mamífero?
+¿Es este animal un carnívoro?
+¿Se para este animal sobre cuatro patas?
+¿Puede volar este animal?
+¿Vive este animal en el agua?
+¿Es este animal un depredador?
+¿Tiene este animal pelaje?
+¿Tiene este animal escamas?
+¿Es este animal nocturno?
+¿Es este animal más grande que un ser humano?
+¿Tiene este animal una cola larga?
+¿Puede este animal trepar árboles?
+¿Es este animal herbívoro?
+¿Tiene este animal rayas o manchas en su cuerpo?
+¿Pone este animal huevos?
+¿Tiene este animal plumas?
+¿Es este animal venenoso?
+¿Vive este animal en climas fríos?
+¿Puede este animal cambiar de color?
+¿Tiene este animal cuernos o astas?
+¿Es este animal un marsupial?
+¿Tiene este animal aletas?
+¿Puede este animal regenerar partes de su cuerpo?
+¿Hiberna este animal?
+¿Tiene este animal un pico?
+¿Es este animal un primate?
+¿Tiene este animal una trompa?
+¿Es este animal un roedor?
+¿Tiene este animal branquias?
+¿Puede este animal vivir tanto en tierra como en agua?
