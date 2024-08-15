@@ -31,7 +31,6 @@ public class Juego {
                 ArrayList<String> respuestasAnimal = new ArrayList<>();
                 for (int i=1; i<partes.length; i++){
                     respuestasAnimal.add(partes[i]);
-                    System.out.println(partes[i]);
                 }   
                 respuestas.put(animal, respuestasAnimal);
             }
