@@ -26,14 +26,13 @@ public class Juego {
         try (BufferedReader br = new BufferedReader(new FileReader(archivoRespuestas))) {
             String linea;
             while ((linea = br.readLine()) != null) {
-                String[] partes = linea.split(" ", 2);
+                String[] partes = linea.split(" ");
                 String animal = partes[0];
                 ArrayList<String> respuestasAnimal = new ArrayList<>();
-                for (char c : partes[1].trim().toCharArray()) {
-                    if (c != ' ') {
-                        respuestasAnimal.add(String.valueOf(c));
-                    }
-            }   
+                for (int i=1; i<partes.length; i++){
+                    respuestasAnimal.add(partes[i]);
+                    System.out.println(partes[i]);
+                }   
                 respuestas.put(animal, respuestasAnimal);
             }
         } catch (IOException e) {

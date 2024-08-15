@@ -37,17 +37,23 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws IOException {
-        launch();
-        /*
+        //launch();
+        
         ArrayList<String> preguntas = cargarPreguntas("ArchivoPreguntas.txt");
         HashMap<String, ArrayList<String>> respuestas = cargarRespuestas("ArchivoRespuestas.txt");
+        for (String p: preguntas ){
+            System.out.println(p);
+        }
+        for (HashMap.Entry<String, ArrayList<String>> entry : respuestas.entrySet()) {
+            String key = entry.getKey();
+            ArrayList<String> value = entry.getValue();
+            System.out.println("Key: " + key + ", Value: " + value);
+            for(String s : value){
+                System.out.println(s);
+            }
+        }
+        
 
-        BinaryTree<String> arbol = new BinaryTree<>();
-        arbol.construirArbol(preguntas, respuestas);
-
-        System.out.println("¡Bienvenido al juego de 20 preguntas!");
-        System.out.println("Piensa en un animal...");
-*/
     }
 
     public int getnPreguntas() {
