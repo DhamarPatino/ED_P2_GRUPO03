@@ -76,7 +76,6 @@ public class Juego1Controller implements Initializable {
         }
     }  
 
-    @FXML
     private void changeImage() {
         // Incrementa el índice y verifica si se debe reiniciar
         currentIndex = (currentIndex + 1) % images.size();

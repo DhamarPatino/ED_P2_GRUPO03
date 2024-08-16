@@ -46,11 +46,11 @@ public class EleccionController implements Initializable {
     @FXML
     private Button file2Button;
     
-    @FXML
-    private Button inicio;
 
     private File file1;
     private File file2;
+    @FXML
+    private Button empezar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -184,7 +184,6 @@ public class EleccionController implements Initializable {
         }
     }
 
-    @FXML
     private boolean guardarArchivos() {
         if (file1 != null && file2 != null) {
             if (validateFile1(file1) && validateFile2(file2)) {

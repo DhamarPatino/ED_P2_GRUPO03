@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -19,9 +20,21 @@
          </image>
       </ImageView>
       <VBox fx:id="vbox" layoutX="279.0" layoutY="115.0" prefHeight="50.0" prefWidth="136.0" />
-      <Label layoutX="279.0" layoutY="72.0" text="Selecciona el número de preguntas" />
-      <Button fx:id="empezar" layoutX="287.0" layoutY="169.0" mnemonicParsing="false" onAction="#empezar" text="Empezar" />
-      <Button fx:id="file1Button" layoutX="383.0" layoutY="272.0" onAction="#uploadFile1" text="Subir archivo de animales" />
-      <Button fx:id="file2Button" layoutX="208.0" layoutY="272.0" onAction="#uploadFile2" text="Subir archivo de preguntas" />
+      <Label layoutX="225.0" layoutY="70.0" text="Selecciona el número de preguntas">
+         <font>
+            <Font name="Serif Regular" size="14.0" />
+         </font></Label>
+      <Button fx:id="empezar" layoutX="287.0" layoutY="169.0" mnemonicParsing="false" onAction="#empezar" text="Empezar">
+         <font>
+            <Font name="Serif Regular" size="13.0" />
+         </font></Button>
+      <Button fx:id="file1Button" layoutX="383.0" layoutY="272.0" onAction="#uploadFile1" text="Subir archivo de animales">
+         <font>
+            <Font name="Serif Regular" size="13.0" />
+         </font></Button>
+      <Button fx:id="file2Button" layoutX="208.0" layoutY="272.0" onAction="#uploadFile2" text="Subir archivo de preguntas">
+         <font>
+            <Font name="Serif Regular" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

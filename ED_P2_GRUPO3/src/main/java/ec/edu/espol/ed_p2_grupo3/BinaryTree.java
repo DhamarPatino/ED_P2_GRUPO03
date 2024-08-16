@@ -30,6 +30,10 @@ public class BinaryTree<E> {
     public boolean isEmpty(){
         return this.root==null ;
     }
+
+    public void setRoot(NodeBinaryTree<String> root) {
+        this.root = root;
+    }
     
     public boolean isLeaf(){
         if(!this.isEmpty()){
@@ -43,6 +47,10 @@ public class BinaryTree<E> {
     }
 
     private NodeBinaryTree<String> construirNodo(ArrayList<String> preguntas, HashMap<String, ArrayList<String>> respuestas, int profundidad) {
+        if (preguntas == null || profundidad >= preguntas.size()) {
+        // Si hemos llegado al final de las preguntas o la lista está vacía, devolver un nodo hoja vacío
+        return null;
+        }
         // Crear un nuevo nodo para la pregunta en esta profundidad
         String pregunta = preguntas.get(profundidad);
         NodeBinaryTree<String> nodo = new NodeBinaryTree<>(pregunta);
@@ -65,16 +73,32 @@ public class BinaryTree<E> {
                 }
             }
         }
+            // Crear listas filtradas para las preguntas siguientes
+    ArrayList<String> preguntasRestantes = new ArrayList<>(preguntas.subList(profundidad + 1, preguntas.size()));
+    HashMap<String, ArrayList<String>> respuestasSi = new HashMap<>();
+    HashMap<String, ArrayList<String>> respuestasNo = new HashMap<>();
+    
+    // Filtrar respuestas para subárbol izquierdo (sí) y derecho (no)
+    for (Map.Entry<String, ArrayList<String>> entry : respuestas.entrySet()) {
+        String animal = entry.getKey();
+        ArrayList<String> respuestaList = entry.getValue();
+        if (respuestaList.size() > profundidad) {
+                if (respuestaList.get(profundidad).equals("sí")) {
+                    respuestasSi.put(animal, respuestaList);
+                } else if (respuestaList.get(profundidad).equals("no")) {
+                    respuestasNo.put(animal, respuestaList);
+                }
+            }
+    }
 
-        // Recursivamente construir los subárboles izquierdo (sí) y derecho (no)
-        BinaryTree<String> subArbolSi = new BinaryTree<>();
-        BinaryTree<String> subArbolNo = new BinaryTree<>();
-        subArbolSi.construirArbol(preguntas, respuestas);
-        subArbolNo.construirArbol(preguntas, respuestas);
-
+    // Recursivamente construir los subárboles izquierdo (sí) y derecho (no)
+    BinaryTree<String> subArbolSi = new BinaryTree<>();
+        subArbolSi.setRoot(construirNodo(preguntasRestantes, respuestasSi, profundidad + 1));
         nodo.setLeftSi(subArbolSi);
-        nodo.setRightNo(subArbolNo);
 
+        BinaryTree<String> subArbolNo = new BinaryTree<>();
+        subArbolNo.setRoot(construirNodo(preguntasRestantes, respuestasNo, profundidad + 1));
+        nodo.setRightNo(subArbolNo);
         return nodo;
     }
    
