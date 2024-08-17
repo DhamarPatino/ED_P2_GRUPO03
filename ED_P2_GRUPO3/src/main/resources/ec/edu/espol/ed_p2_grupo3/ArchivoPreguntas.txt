@@ -15,16 +15,6 @@
 ¿Pone este animal huevos?
 ¿Tiene este animal plumas?
 ¿Es este animal venenoso?
-¿Vive este animal en climas fríos?
 ¿Puede este animal cambiar de color?
 ¿Tiene este animal cuernos o astas?
-¿Es este animal un marsupial?
 ¿Tiene este animal aletas?
-¿Puede este animal regenerar partes de su cuerpo?
-¿Hiberna este animal?
-¿Tiene este animal un pico?
-¿Es este animal un primate?
-¿Tiene este animal una trompa?
-¿Es este animal un roedor?
-¿Tiene este animal branquias?
-¿Puede este animal vivir tanto en tierra como en agua?

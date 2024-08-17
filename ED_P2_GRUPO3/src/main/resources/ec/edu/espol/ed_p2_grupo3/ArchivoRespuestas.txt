@@ -1,10 +1,10 @@
-León si si si no no si si no no si si no no si no no no no no no no no no no no no no no no no
-Delfín si si no no si si no no no si si no no no no no no no no no no si no no no no no no si no
-Águila no si no si no si no no no no si si no no si si no no no no no no no no si no no no no no
-Rana no no no no si no no no si no no si si no si no no no si no no no si no no no no no si si
-Murciélago si no no si no si si no si no si si no no no no no no no no no no no si no no no no no no
-Camaleón no no si no no no no si no no si si si no si no no no si no no no si no no no no no no no
-Pingüino no no si no si si no no no no no no si no si si no si no no no si no no si no no no no si
-Elefante si no si no no no si no no si si no si no no no no no no si no no no no no no si no no no
-Serpiente no si no no no si no si si no si si no si si no si no si no no no si no no no no no no no
-Canguro si no si no no no si no no si si si si no no no no no no no si no no no no no no no no no
+León si si si no no si si no no si si no no si no no no no no no
+Delfín si si no no si si no no no si si no no no no no no no no si
+Águila no si no si no si no no no no si si no no si si no no no no
+Rana no si no si no si no no no no si si no no si si no no no no
+Murciélago si no no si no si si no si no si si no no no no no no no no
+Camaleón no no si no no no no si no no si si si no si no no no si no
+Pingüino no no si no si si no no no no no no si no si si no si no no
+Elefante si no si no no no si no no si si no si no no no no no si no
+Serpiente no si no no no si no si si no si si no si si no si no si no
+Canguro si no si no no no si no no si si si si no no no no no no no
