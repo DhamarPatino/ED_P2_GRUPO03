@@ -45,59 +45,34 @@ public class BinaryTree<E> {
     // Verifica si el nodo es una hoja (no tiene hijos)
     public boolean isLeaf() {
         if (!this.isEmpty()) {
-            return this.root.getLeftSi() == null && this.root.getRightNo() == null;
+            return this.root.getLeft() == null && this.root.getRight() == null;
         }
         return false;
     }
 
     // Construye el árbol binario a partir de las preguntas y respuestas dadas
-    public void construirArbol(ArrayList<String> preguntas, HashMap<String, ArrayList<String>> respuestas) {
-        this.root = (NodeBinaryTree<E>) construirNodo(preguntas, respuestas, 0);
+    
+      public void construirArbolDePreguntas(ArrayList<E> preguntas) {
+        this.setRoot(construirNodo(preguntas, 0));
     }
 
-    // Método recursivo para construir el árbol binario
-    private NodeBinaryTree<String> construirNodo(ArrayList<String> preguntas, HashMap<String, ArrayList<String>> respuestas, int profundidad) {
-        if (preguntas == null || profundidad >= preguntas.size() || respuestas.isEmpty()) {
-            // Si hemos llegado al final de las preguntas o la lista está vacía, devolver null
+    private NodeBinaryTree<E> construirNodo(ArrayList<E> preguntas, int index) {
+        if (index >= preguntas.size()) {
             return null;
         }
 
-        // Crear un nuevo nodo para la pregunta en esta profundidad
-        String pregunta = preguntas.get(profundidad);
-        NodeBinaryTree<String> nodo = new NodeBinaryTree<>(pregunta);
+        // Crear un nodo para la pregunta actual
+        NodeBinaryTree<E> nodo;
+        nodo = new NodeBinaryTree<>(preguntas.get(index));
 
-        // Crear listas filtradas para las respuestas de sí y no
-        HashMap<String, ArrayList<String>> respuestasSi = new HashMap<>();
-        HashMap<String, ArrayList<String>> respuestasNo = new HashMap<>();
-
-        for (Map.Entry<String, ArrayList<String>> entry : respuestas.entrySet()) {
-            String animal = entry.getKey();
-            ArrayList<String> respuestaList = entry.getValue();
-            if (respuestaList.size() > profundidad) {
-                if (respuestaList.get(profundidad).equals("sí")) {
-                    respuestasSi.put(animal, respuestaList);
-                } else if (respuestaList.get(profundidad).equals("no")) {
-                    respuestasNo.put(animal, respuestaList);
-                }
-            }
+        // Construir los hijos solo si hay más preguntas disponibles
+        if (index + 1 < preguntas.size()) {
+            nodo.setLeft(new BinaryTree<>(construirNodo(preguntas, index + 1)));
+            nodo.setRight(new BinaryTree<>(construirNodo(preguntas, index + 1)));
         }
-
-        // Si no hay más preguntas y solo queda un animal, el nodo se convierte en una hoja con el nombre del animal
-        if (respuestasSi.size() == 1 && respuestasNo.isEmpty()) {
-            nodo.setContent(respuestasSi.keySet().iterator().next());
-            return nodo;
-        } else if (respuestasNo.size() == 1 && respuestasSi.isEmpty()) {
-            nodo.setContent(respuestasNo.keySet().iterator().next());
-            return nodo;
-        }
-
-        // Recursivamente construir los subárboles izquierdo (sí) y derecho (no)
-        nodo.setLeftSi(new BinaryTree<>(construirNodo(preguntas, respuestasSi, profundidad + 1)));
-        nodo.setRightNo(new BinaryTree<>(construirNodo(preguntas, respuestasNo, profundidad + 1)));
 
         return nodo;
     }
-
     // Recorrido preorden del árbol binario
     public void recorrerPreorden() {
         if (!this.isEmpty()) {
@@ -105,13 +80,13 @@ public class BinaryTree<E> {
             System.out.println(this.root.getContent());
 
             // 2. Recorrer preorden en hijo izquierdo
-            if (root.getLeftSi() != null) {
-                root.getLeftSi().recorrerPreorden();
+            if (root.getLeft() != null) {
+                root.getLeft().recorrerPreorden();
             }
 
             // 3. Recorrer preorden en hijo derecho
-            if (root.getRightNo() != null) {
-                root.getRightNo().recorrerPreorden();
+            if (root.getRight() != null) {
+                root.getRight().recorrerPreorden();
             }
         }
     }
@@ -120,13 +95,13 @@ public class BinaryTree<E> {
     public void recorrerPostorden() {
         if (!this.isEmpty()) {
             // 1. Recorrer postorden en hijo izquierdo
-            if (root.getLeftSi() != null) {
-                root.getLeftSi().recorrerPostorden();
+            if (root.getLeft() != null) {
+                root.getLeft().recorrerPostorden();
             }
 
             // 2. Recorrer postorden en hijo derecho
-            if (root.getRightNo() != null) {
-                root.getRightNo().recorrerPostorden();
+            if (root.getRight() != null) {
+                root.getRight().recorrerPostorden();
             }
 
             // 3. Imprimir a la raiz
@@ -138,16 +113,16 @@ public class BinaryTree<E> {
     public void recorrerEnorden() {
         if (!this.isEmpty()) {
             // 1. Recorrer enorden en hijo izquierdo
-            if (root.getLeftSi() != null) {
-                root.getLeftSi().recorrerEnorden();
+            if (root.getLeft() != null) {
+                root.getLeft().recorrerEnorden();
             }
 
             // 2. Imprimir a la raiz
             System.out.println(this.root.getContent());
 
             // 3. Recorrer enorden en hijo derecho
-            if (root.getRightNo() != null) {
-                root.getRightNo().recorrerEnorden();
+            if (root.getRight() != null) {
+                root.getRight().recorrerEnorden();
             }
         }
     }

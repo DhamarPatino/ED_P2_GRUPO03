@@ -18,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -30,42 +31,56 @@ import javafx.stage.Stage;
  */
 public class EleccionController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
-
     @FXML
     private VBox vbox;
 
     private int selectedNumber;
-    private int maxnumber=2;
+    private int maxnumber = 2;
 
     @FXML
     private Button file1Button;
     
     @FXML
     private Button file2Button;
-    
+
+    @FXML
+    private ComboBox<String> fileChoiceComboBox;
+
+    @FXML
+    private Button empezar;
 
     private File file1;
     private File file2;
-    @FXML
-    private Button empezar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Inicializa el Spinner con un valor predeterminado
         Spinner<Integer> spinner = new Spinner<>(1, maxnumber, 1);
-        spinner.valueProperty().addListener(new ChangeListener<Integer>() {
-            @Override
-            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
-                selectedNumber = newValue;
-            }
-        });
-
-        // Inicializa el campo con el valor por defecto del Spinner
+        spinner.valueProperty().addListener((observable, oldValue, newValue) -> selectedNumber = newValue);
         selectedNumber = spinner.getValue();
         vbox.getChildren().add(spinner);
+
+        // Inicializa el ComboBox con dos opciones
+        fileChoiceComboBox.getItems().addAll("Subir archivos nuevos", "Usar archivo predeterminado");
+        fileChoiceComboBox.getSelectionModel().selectFirst();
+        fileChoiceComboBox.getSelectionModel().select("Usar archivo predeterminado");
+        file1Button.setDisable(true);
+        file2Button.setDisable(true);
+        cargarArchivosPredeterminados();
+
+        // Listener para ComboBox
+        fileChoiceComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if ("Subir archivos nuevos".equals(newValue)) {
+                file1Button.setDisable(false);
+                file2Button.setDisable(false);
+                file1 = null;
+                file2 = null;
+            } else {
+                file1Button.setDisable(true);
+                file2Button.setDisable(true);
+                cargarArchivosPredeterminados();
+            }
+        });
     }
 
     @FXML
@@ -93,7 +108,6 @@ public class EleccionController implements Initializable {
         if (file2 != null) {
             if (validateFile2(file2)) {
                 System.out.println("Archivo 2 es válido.");
-                // Actualiza maxnumber con el número de preguntas en file2
                 updateMaxNumber(file2);
             } else {
                 System.out.println("Archivo 2 no es válido.");
@@ -107,36 +121,22 @@ public class EleccionController implements Initializable {
             System.out.println("Debe subir primero el archivo de preguntas.");
             return false;
         }
-
         try {
-            // Leer el contenido de ambos archivos
             List<String> linesFile1 = Files.readAllLines(file.toPath());
             List<String> linesFile2 = Files.readAllLines(file2.toPath());
 
-            // Verificar que el archivo de preguntas tenga líneas
             if (linesFile2.isEmpty()) {
                 System.out.println("El archivo de preguntas está vacío.");
                 return false;
             }
 
-            // Número de preguntas en file2
             int numberOfQuestions = linesFile2.size();
-
-            // Verificar cada línea de file1
             for (String line : linesFile1) {
                 String[] parts = line.split(" ");
-                if (parts.length <= 1) {
-                    // Si la línea no tiene al menos dos partes (nombre + una respuesta)
-                    System.out.println("Formato incorrecto en la línea: " + line);
+                if (parts.length <= 1 || (parts.length - 1) != numberOfQuestions) {
+                    System.out.println("Formato incorrecto o número incorrecto de respuestas en la línea: " + line);
                     return false;
                 }
-                if(parts.length-1!=numberOfQuestions){
-                    System.out.println("mal numero de respuestas");
-                    return false;
-                }
-                // La primera parte debe ser el nombre del animal
-                String animalName = parts[0];
-                // El resto de las partes deben ser "sí" o "no"
                 for (int i = 1; i < parts.length; i++) {
                     String response = parts[i];
                     if (!response.equals("si") && !response.equals("no")) {
@@ -145,19 +145,17 @@ public class EleccionController implements Initializable {
                     }
                 }
             }
-
             return true;
         } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
     }
+
     private boolean validateFile2(File file) {
         try {
             List<String> lines = Files.readAllLines(file.toPath());
-            // Comprobar que cada línea es una pregunta que termina con "?"
-            boolean allLinesAreQuestions = lines.stream().allMatch(line -> line.endsWith("?"));
-            return allLinesAreQuestions;
+            return lines.stream().allMatch(line -> line.endsWith("?"));
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -167,21 +165,23 @@ public class EleccionController implements Initializable {
     private void updateMaxNumber(File file) {
         try {
             List<String> lines = Files.readAllLines(file.toPath());
-            maxnumber = lines.size(); // Actualiza maxnumber con el número de preguntas
+            maxnumber = lines.size();
 
-            // Elimina el Spinner existente y añade uno nuevo
             vbox.getChildren().clear();
             Spinner<Integer> spinner = new Spinner<>(1, maxnumber, 1);
-            spinner.valueProperty().addListener(new ChangeListener<Integer>() {
-                @Override
-                public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
-                    selectedNumber = newValue;
-                }
-            });
+            spinner.valueProperty().addListener((observable, oldValue, newValue) -> selectedNumber = newValue);
             vbox.getChildren().add(spinner);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void cargarArchivosPredeterminados() {
+        file1 = new File("src/main/resources/animales.txt");
+        file2 = new File("src/main/resources/preguntas.txt");
+
+        updateMaxNumber(file2);
+        System.out.println("Archivos predeterminados cargados.");
     }
 
     private boolean guardarArchivos() {

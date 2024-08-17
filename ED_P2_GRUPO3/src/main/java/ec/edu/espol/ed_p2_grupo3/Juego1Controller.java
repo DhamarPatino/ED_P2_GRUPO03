@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,17 +30,19 @@ public class Juego1Controller implements Initializable {
 
     @FXML
     private Button si;
-    
+
     @FXML
     private Button no;
 
     @FXML
-    private Label pregunta; 
+    private Label pregunta;
 
     private int currentIndex = 0;
     private BinaryTree<String> arbol;
     private NodeBinaryTree<String> currentNode;
     private ArrayList<String> images;
+    public int preguntas = 6;
+    private int preguntaCounter = 0;  // Contador de preguntas
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -58,11 +61,11 @@ public class Juego1Controller implements Initializable {
             System.out.println("Preguntas cargadas: " + preguntas);
             HashMap<String, ArrayList<String>> respuestas = Juego.cargarRespuestas("src/main/resources/animales.txt");
             System.out.println("Respuestas cargadas: " + respuestas);
-
+            System.out.println("arbol: ");
             arbol = new BinaryTree<>();
-            arbol.construirArbol(preguntas, respuestas);
+            arbol.construirArbolDePreguntas(preguntas);
             currentNode = arbol.getRoot();
-
+            arbol.recorrerPreorden();
             // Mensaje para verificar el nodo raíz
             if (currentNode != null) {
                 System.out.println("Pregunta raíz: " + currentNode.getContent());
@@ -74,7 +77,7 @@ public class Juego1Controller implements Initializable {
             e.printStackTrace();
             pregunta.setText("Error al cargar archivos.");
         }
-    }  
+    }
 
     private void changeImage() {
         // Incrementa el índice y verifica si se debe reiniciar
@@ -86,30 +89,34 @@ public class Juego1Controller implements Initializable {
 
     @FXML
     private void si(ActionEvent event) {
-        if (currentNode != null) {
-            if (currentNode.getLeftSi() != null) {
-                currentNode = currentNode.getLeftSi().getRoot();
+        if (currentNode != null && preguntaCounter < preguntas) {
+            preguntaCounter++;
+            if (currentNode.getLeft() != null) {
+                currentNode = currentNode.getLeft().getRoot();
                 updateQuestion();
             } else {
                 pregunta.setText("¡Has terminado o no hay más preguntas!");
             }
-        } else {
-            pregunta.setText("¡No hay más preguntas!");
+            if (preguntaCounter >= preguntas) {
+                showPossibleAnimals();
+            }
         }
         changeImage();
     }
 
     @FXML
     private void no(ActionEvent event) {
-        if (currentNode != null) {
-            if (currentNode.getRightNo() != null) {
-                currentNode = currentNode.getRightNo().getRoot();
+        if (currentNode != null && preguntaCounter < preguntas) {
+            preguntaCounter++;
+            if (currentNode.getRight() != null) {
+                currentNode = currentNode.getRight().getRoot();
                 updateQuestion();
             } else {
                 pregunta.setText("¡Has terminado o no hay más preguntas!");
             }
-        } else {
-            pregunta.setText("¡No hay más preguntas!");
+            if (preguntaCounter >= preguntas) {
+                showPossibleAnimals();
+            }
         }
         changeImage();
     }
@@ -120,5 +127,28 @@ public class Juego1Controller implements Initializable {
         } else {
             pregunta.setText("¡Has terminado!");
         }
+    }
+
+    private void showPossibleAnimals() {
+        List<String> possibleAnimals = collectAnimals(currentNode);
+        pregunta.setText("Animales posibles: " + String.join(", ", possibleAnimals));
+        si.setDisable(true);
+        no.setDisable(true);
+    }
+
+    private List<String> collectAnimals(NodeBinaryTree<String> node) {
+        List<String> animals = new ArrayList<>();
+        if (node == null) {
+            return animals;
+        }
+        if (node.getLeft() == null && node.getRight() == null) {
+            // Es una hoja
+            animals.add(node.getContent());
+        } else {
+            // Recorrer ambos subárboles
+            animals.addAll(collectAnimals(node.getLeft().getRoot()));
+            animals.addAll(collectAnimals(node.getRight().getRoot()));
+        }
+        return animals;
     }
 }

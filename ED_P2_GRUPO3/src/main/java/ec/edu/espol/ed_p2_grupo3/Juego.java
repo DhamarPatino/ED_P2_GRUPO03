@@ -26,7 +26,7 @@ public class Juego {
         try (BufferedReader br = new BufferedReader(new FileReader(archivoRespuestas))) {
             String linea;
             while ((linea = br.readLine()) != null) {
-                String[] partes = linea.split(" ");
+                String[] partes = linea.split(" "   );
                 String animal = partes[0];
                 ArrayList<String> respuestasAnimal = new ArrayList<>();
                 for (int i=1; i<partes.length; i++){
