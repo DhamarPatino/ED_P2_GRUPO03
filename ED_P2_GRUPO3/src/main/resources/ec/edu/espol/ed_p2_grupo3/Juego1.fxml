@@ -8,31 +8,31 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="700.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.Juego1Controller">
+<AnchorPane id="AnchorPane" prefHeight="731.0" prefWidth="700.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.Juego1Controller">
     <children>
         <!-- Fondo de la Pantalla -->
-        <ImageView fitHeight="540.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="false">
+        <ImageView fitHeight="731.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="false">
             <image>
                 <Image url="@fondo.jpg" />
             </image>
         </ImageView>
 
         <!-- Imagen de Akinator -->
-        <ImageView fx:id="imagen" fitHeight="419.0" fitWidth="228.0" layoutX="59.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imagen" fitHeight="449.0" fitWidth="248.0" layoutX="43.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@akinator.png" />
             </image>
         </ImageView>
 
         <!-- Botón Si -->
-        <Button fx:id="si" layoutX="339.0" layoutY="321.0" mnemonicParsing="false" onAction="#si" prefHeight="76.0" prefWidth="115.0" styleClass="custom-button" text="SI">
+        <Button fx:id="si" layoutX="339.0" layoutY="321.0" mnemonicParsing="false" onAction="#si" prefHeight="76.0" prefWidth="115.0" styleClass="button-si" text="SI">
             <font>
                 <Font name="Serif Regular" size="30.0" />
             </font>
         </Button>
 
         <!-- Botón No -->
-        <Button fx:id="no" layoutX="501.0" layoutY="321.0" mnemonicParsing="false" onAction="#no" prefHeight="76.0" prefWidth="115.0" styleClass="custom-button" text="NO">
+        <Button fx:id="no" layoutX="501.0" layoutY="321.0" mnemonicParsing="false" onAction="#no" styleClass="button-no" prefHeight="76.0" prefWidth="115.0"  text="NO">
             <font>
                 <Font name="Serif Regular" size="30.0" />
             </font>

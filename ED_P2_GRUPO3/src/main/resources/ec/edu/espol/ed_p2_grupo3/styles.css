@@ -1,7 +1,7 @@
 /* Botones personalizados */
 .custom-button {
-    -fx-background-color: linear-gradient(#ff7f50, #ff4500);
-    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(#f3c6c6, #f3a6a6);
+    -fx-text-fill: #4d4d4d; /* Texto en un gris suave */
     -fx-font-weight: bold;
     -fx-background-radius: 10;
     -fx-border-radius: 10;
@@ -9,49 +9,92 @@
 }
 
 .custom-button:hover {
-    -fx-background-color: linear-gradient(#ff4500, #ff7f50);
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0);
+    -fx-background-color: linear-gradient(#f3a6a6, #f3c6c6);
+    -fx-effect: dropshadow(gaussian, rgba(77, 77, 77, 0.5), 10, 0, 0, 0); /* Sombra en gris suave */
 }
 
 /* Etiquetas personalizadas */
 .custom-label {
     -fx-font-weight: bold;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 3, 0, 0, 0);
+    -fx-text-fill: #4d4d4d; /* Texto en gris suave */
+    -fx-effect: dropshadow(gaussian, rgba(77, 77, 77, 0.75), 3, 0, 0, 0); /* Sombra en gris suave */
 }
+
 /* ComboBox personalizado */
 .custom-combobox {
-    -fx-background-color: linear-gradient(#ff7f50, #ff4500);
+    -fx-background-color: linear-gradient(#c6e2f3, #a6d2f3);
     -fx-background-radius: 10;
     -fx-border-radius: 10;
     -fx-padding: 5 10 5 10;
     -fx-font-weight: bold;
-    -fx-text-fill: white;
+    -fx-text-fill: #4d4d4d; /* Texto en gris suave */
 }
 
 .custom-combobox:hover {
-    -fx-background-color: linear-gradient(#ff4500, #ff7f50);
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0);
+    -fx-background-color: linear-gradient(#a6d2f3, #c6e2f3);
+    -fx-effect: dropshadow(gaussian, rgba(77, 77, 77, 0.5), 10, 0, 0, 0); /* Sombra en gris suave */
 }
 
 /* Lista desplegable del ComboBox */
 .custom-combobox .list-cell {
-    -fx-background-color: linear-gradient(#ff7f50, #ff4500);
-    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(#c6e2f3, #a6d2f3);
+    -fx-text-fill: #4d4d4d; /* Texto en gris suave */
 }
 
 .custom-combobox .list-cell:hover {
-    -fx-background-color: linear-gradient(#ff4500, #ff7f50);
+    -fx-background-color: linear-gradient(#a6d2f3, #c6e2f3);
 }
+
 /* Estilo personalizado para el texto "Volver" */
 .custom-volver {
     -fx-font-size: 18px;
     -fx-font-weight: bold;
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: #4d4d4d; /* Texto en gris suave */
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 3, 0, 0, 0);
+    -fx-effect: dropshadow(gaussian, rgba(77, 77, 77, 0.75), 3, 0, 0, 0); /* Sombra en gris suave */
 }
 
 .custom-volver:hover {
-    -fx-text-fill: #ff4500;
+    -fx-text-fill: #f3a6a6;
 }
 
+/* Estilo personalizado para el VBox */
+.custom-vbox {
+    -fx-background-color: linear-gradient(#f3e2c6, #f3d2a6);
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-spacing: 15;
+    -fx-alignment: center; /* Centra el contenido del VBox */
+    -fx-effect: dropshadow(gaussian, rgba(77, 77, 77, 0.5), 10, 0, 0, 0); /* Sombra en gris suave */
+}
+/* Botón "Sí" personalizado */
+.button-si {
+    -fx-background-color: linear-gradient(#90ee90, #32cd32); /* Verde claro a verde más intenso */
+    -fx-text-fill: #006400; /* Verde oscuro para el texto */
+    -fx-font-weight: bold;
+    -fx-font-size: 18px; /* Aumenta el tamaño de la fuente */
+    -fx-background-radius: 15; /* Bordes más redondeados */
+    -fx-border-radius: 15;
+    -fx-padding: 15 25 15 25; /* Aumenta el tamaño del botón */
+}
+
+.button-si:hover {
+    -fx-background-color: linear-gradient(#32cd32, #90ee90);
+    -fx-effect: dropshadow(gaussian, rgba(0, 100, 0, 0.7), 12, 0, 0, 0); /* Sombra en verde oscuro */
+}
+
+/* Botón "No" personalizado */
+.button-no {
+    -fx-background-color: linear-gradient(#ff7f7f, #ff4500); /* Rojo claro a rojo más intenso */
+    -fx-text-fill: #8b0000; /* Rojo oscuro para el texto */
+    -fx-font-weight: bold;
+    -fx-font-size: 18px; /* Aumenta el tamaño de la fuente */
+    -fx-background-radius: 15; /* Bordes más redondeados */
+    -fx-border-radius: 15;
+    -fx-padding: 15 25 15 25; /* Aumenta el tamaño del botón */
+}
+
+.button-no:hover {
+    -fx-background-color: linear-gradient(#ff4500, #ff7f7f);
+    -fx-effect: dropshadow(gaussian, rgba(139, 0, 0, 0.7), 12, 0, 0, 0); /* Sombra en rojo oscuro */
+}

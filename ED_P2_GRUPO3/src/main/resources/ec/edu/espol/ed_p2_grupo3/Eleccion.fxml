@@ -13,50 +13,63 @@
 
     <children>
         <!-- Background Image -->
-        <ImageView fitHeight="540.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="false">
+        <ImageView fitHeight="731.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="false">
             <image>
                 <Image url="@fondo.jpg" />
             </image>
         </ImageView>
 
         <!-- Akinator Image -->
-        <ImageView fitHeight="260.0" fitWidth="168.0" layoutX="37.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="520.0" fitWidth="502.0" layoutX="23.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@akinator.png" />
             </image>
         </ImageView>
 
-        <VBox fx:id="vbox" layoutX="279.0" layoutY="115.0" prefHeight="50.0" prefWidth="136.0" />
-      
+        <VBox fx:id="vbox" layoutX="350.0" layoutY="216.0" prefHeight="150.0" prefWidth="272.0" />
+
         <!-- Selection Label -->
-        <Label layoutX="196.0" layoutY="74.0" styleClass="custom-label" text="Selecciona el número de preguntas" textFill="white">
+        <Label layoutX="250.0" layoutY="163.0" styleClass="custom-label" text="Selecciona el número de preguntas" textFill="white">
             <font>
-                <Font name="Serif Regular" size="14.0" />
+                <Font name="Serif Regular" size="28.0" />
             </font>
         </Label>
       
         <!-- Start Button -->
-        <Button fx:id="empezar" layoutX="252.0" layoutY="212.0" mnemonicParsing="false" onAction="#empezar" styleClass="custom-button" text="Empezar">
+        <Button fx:id="empezar" layoutX="350.0" layoutY="409.0" mnemonicParsing="false" onAction="#empezar" prefHeight="72.0" prefWidth="199.0" styleClass="custom-button" text="Empezar">
             <font>
-                <Font name="Serif Regular" size="13.0" />
+                <Font name="Serif Regular" size="37.0" />
             </font>
         </Button>
       
         <!-- File Buttons -->
-        <Button fx:id="file1Button" layoutX="205.0" layoutY="318.0" onAction="#uploadFile1" styleClass="custom-button" text="Subir archivo de animales">
+        <Button fx:id="file1Button" layoutX="430.0" layoutY="80.0" onAction="#uploadFile1" prefHeight="50.0" prefWidth="207.0" styleClass="custom-button" text="Subir archivo de animales">
             <font>
                 <Font name="Serif Regular" size="13.0" />
             </font>
         </Button>
       
-        <Button fx:id="file2Button" layoutX="202.0" layoutY="271.0" onAction="#uploadFile2" styleClass="custom-button" text="Subir archivo de preguntas">
+        <Button fx:id="file2Button" layoutX="430.0" layoutY="13.0" onAction="#uploadFile2" prefHeight="50.0" prefWidth="207.0" styleClass="custom-button" text="Subir archivo de preguntas">
             <font>
                 <Font name="Serif Regular" size="13.0" />
             </font>
         </Button>
       
         <!-- File Selection ComboBox -->
-        <ComboBox fx:id="fileChoiceComboBox" layoutX="217.0" layoutY="23.0" prefWidth="150.0" styleClass="custom-combobox" />
+        <ComboBox fx:id="fileChoiceComboBox" layoutX="86.0" layoutY="63.0" prefWidth="300.0" styleClass="custom-combobox" />
 
+        <!-- Music Control Buttons -->
+        <Button fx:id="playMusicButton" layoutX="314.0" layoutY="527.0" mnemonicParsing="false" onAction="#playMusic" styleClass="custom-button" text="Play Music">
+            <font>
+                <Font name="Serif Regular" size="18.0" />
+            </font>
+        </Button>
+      
+        <Button fx:id="pauseMusicButton" layoutX="470.0" layoutY="527.0" mnemonicParsing="false" onAction="#pauseMusic" styleClass="custom-button" text="Pause Music">
+            <font>
+                <Font name="Serif Regular" size="18.0" />
+            </font>
+        </Button>
+      
     </children>
 </AnchorPane>

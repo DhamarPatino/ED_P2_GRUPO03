@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package ec.edu.espol.ed_p2_grupo3;
 
 import java.io.File;
@@ -12,8 +8,8 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.animation.FadeTransition;
+import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,14 +17,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
-/**
- * FXML Controller class
- *
- * @author RUCO HOUSE
- */
 public class EleccionController implements Initializable {
 
     @FXML
@@ -39,7 +33,7 @@ public class EleccionController implements Initializable {
 
     @FXML
     private Button file1Button;
-    
+
     @FXML
     private Button file2Button;
 
@@ -52,8 +46,13 @@ public class EleccionController implements Initializable {
     private File file1;
     private File file2;
 
+    private static MediaPlayer mediaPlayer; // Variable para controlar la música de fondo
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // Iniciar la música de fondo
+        iniciarMusicaFondo();
+
         // Inicializa el Spinner con un valor predeterminado
         Spinner<Integer> spinner = new Spinner<>(1, 10, 1);
 
@@ -74,7 +73,7 @@ public class EleccionController implements Initializable {
         file2Button.setDisable(true);
         cargarArchivosPredeterminados();
 
-        // Listener para ComboBox
+        // Listener para ComboBox con animación
         fileChoiceComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
             if ("Subir archivos nuevos".equals(newValue)) {
                 file1Button.setDisable(false);
@@ -86,7 +85,40 @@ public class EleccionController implements Initializable {
                 file2Button.setDisable(true);
                 cargarArchivosPredeterminados();
             }
+            // Añadir la animación cuando se selecciona un elemento en el ComboBox
+            aplicarAnimacion(fileChoiceComboBox);
         });
+    }
+
+    // Método para iniciar la música de fondo
+    private void iniciarMusicaFondo() {
+        if (mediaPlayer == null) {
+            String musicFile = getClass().getResource("/musica/hotel.mp3").toString();
+            Media media = new Media(musicFile);
+            mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE); // Repetir la música indefinidamente
+            mediaPlayer.play();
+        } else {
+            mediaPlayer.play(); // Reanuda la música si ya está cargada
+        }
+    }
+
+    // Método para aplicar la animación al ComboBox
+    private void aplicarAnimacion(ComboBox<String> comboBox) {
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), comboBox);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0.5);
+        fadeTransition.setCycleCount(2);
+        fadeTransition.setAutoReverse(true);
+
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(500), comboBox);
+        scaleTransition.setByX(1.2);
+        scaleTransition.setByY(1.2);
+        scaleTransition.setCycleCount(2);
+        scaleTransition.setAutoReverse(true);
+
+        fadeTransition.play();
+        scaleTransition.play();
     }
 
     @FXML
@@ -223,4 +255,20 @@ public class EleccionController implements Initializable {
             App.setRoot("Juego1");
         }
     }
+
+    @FXML
+    private void playMusic(ActionEvent event) {
+        if (mediaPlayer != null) {
+            mediaPlayer.play();
+        }
+    }
+
+    @FXML
+    private void pauseMusic(ActionEvent event) {
+        if (mediaPlayer != null) {
+            mediaPlayer.pause();
+        }
+    }
+
+
 }

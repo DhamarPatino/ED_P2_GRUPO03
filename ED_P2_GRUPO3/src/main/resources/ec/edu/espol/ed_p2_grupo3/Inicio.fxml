@@ -1,35 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.InicioController">
+<AnchorPane id="AnchorPane" prefHeight="731.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.InicioController">
    <children>
       <!-- Background Image -->
-      <ImageView fitHeight="540.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="731.0" fitWidth="700.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="false">
          <image>
             <Image url="@Imagen2.png" />
          </image>
          <!-- Make the ImageView stretch to fill the AnchorPane -->
          <AnchorPane.topAnchor>0.0</AnchorPane.topAnchor>
          <AnchorPane.bottomAnchor>0.0</AnchorPane.bottomAnchor>
-         <AnchorPane.leftAnchor>0.0</AnchorPane.leftAnchor>
-         <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
+         <AnchorPane.leftAnchor>-6.0</AnchorPane.leftAnchor>
+         <AnchorPane.rightAnchor>136.0</AnchorPane.rightAnchor>
       </ImageView>
 
       <!-- Button Image -->
-      <ImageView fx:id="inicioButton" pickOnBounds="true" preserveRatio="true" onMouseClicked="#start"
-                 style="-fx-cursor: hand;">
+      <ImageView fx:id="inicioButton" fitHeight="250.0" fitWidth="250.0" layoutX="219.0" layoutY="404.0" onMouseClicked="#start" pickOnBounds="true" preserveRatio="false" style="-fx-cursor: hand;">
          <image>
             <Image url="@Imagen6.png" />
          </image>
          <!-- Bind the size and position to the AnchorPane -->
-         <AnchorPane.leftAnchor>215.0</AnchorPane.leftAnchor>
-         <AnchorPane.topAnchor>395.0</AnchorPane.topAnchor>
-         <AnchorPane.rightAnchor>365.0</AnchorPane.rightAnchor>
-         <AnchorPane.bottomAnchor>86.0</AnchorPane.bottomAnchor>
+         <AnchorPane.leftAnchor>219.0</AnchorPane.leftAnchor>
+         <AnchorPane.topAnchor>404.0</AnchorPane.topAnchor>
+         <AnchorPane.rightAnchor>361.0</AnchorPane.rightAnchor>
+         <AnchorPane.bottomAnchor>77.0</AnchorPane.bottomAnchor>
       </ImageView>
    </children>
 </AnchorPane>
