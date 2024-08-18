@@ -17,6 +17,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -43,7 +45,8 @@ public class Juego1Controller implements Initializable {
     private ArrayList<String> images;
     public int preguntas = App.getPreguntas();
     private int preguntaCounter = 0;  // Contador de preguntas
-
+    @FXML
+    private Text volver;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         images = new ArrayList<>();
@@ -78,6 +81,17 @@ public class Juego1Controller implements Initializable {
             e.printStackTrace();
             pregunta.setText("Error al cargar archivos.");
         }
+        volver.setOnMouseClicked(event -> {
+            try {
+                volverLink(event);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+    }
+    @FXML
+    void volverLink(MouseEvent event) throws IOException {
+        App.setRoot("Eleccion");
     }
 
     private void changeImage() {
