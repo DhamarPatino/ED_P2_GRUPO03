@@ -52,7 +52,7 @@ public class Juego1Controller implements Initializable {
         images = new ArrayList<>();
         String relativePath = "ec/edu/espol/ed_p2_grupo3/";
         images.add(relativePath + "akinator.png");
-        images.add(relativePath + "aki2.jpg");
+        images.add(relativePath + "aki2.png");
         images.add(relativePath + "aki3.png");
 
         // Mensaje para verificar la ruta de la imagen
@@ -89,7 +89,6 @@ public class Juego1Controller implements Initializable {
             }
         });
     }
-    @FXML
     void volverLink(MouseEvent event) throws IOException {
         App.setRoot("Eleccion");
     }

@@ -5,13 +5,31 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="524.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.InicioController">
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.InicioController">
    <children>
-      <ImageView fitHeight="541.0" fitWidth="544.0" pickOnBounds="true" preserveRatio="true">
+      <!-- Background Image -->
+      <ImageView fitHeight="540.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Imagen2.png" />
          </image>
+         <!-- Make the ImageView stretch to fill the AnchorPane -->
+         <AnchorPane.topAnchor>0.0</AnchorPane.topAnchor>
+         <AnchorPane.bottomAnchor>0.0</AnchorPane.bottomAnchor>
+         <AnchorPane.leftAnchor>0.0</AnchorPane.leftAnchor>
+         <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
       </ImageView>
-      <Button fx:id="inicio" layoutX="248.0" layoutY="408.0" mnemonicParsing="false" onAction="#start" text="inicio" />
+
+      <!-- Button Image -->
+      <ImageView fx:id="inicioButton" pickOnBounds="true" preserveRatio="true" onMouseClicked="#start"
+                 style="-fx-cursor: hand;">
+         <image>
+            <Image url="@Imagen6.png" />
+         </image>
+         <!-- Bind the size and position to the AnchorPane -->
+         <AnchorPane.leftAnchor>215.0</AnchorPane.leftAnchor>
+         <AnchorPane.topAnchor>395.0</AnchorPane.topAnchor>
+         <AnchorPane.rightAnchor>365.0</AnchorPane.rightAnchor>
+         <AnchorPane.bottomAnchor>86.0</AnchorPane.bottomAnchor>
+      </ImageView>
    </children>
 </AnchorPane>

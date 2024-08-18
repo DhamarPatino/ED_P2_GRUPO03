@@ -8,25 +8,49 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="608.0" prefWidth="849.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.Juego1Controller">
-   <children>
-      <ImageView fx:id="imagen" fitHeight="212.0" fitWidth="142.0" layoutX="25.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@akinator.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="si" layoutX="207.0" layoutY="151.0" mnemonicParsing="false" onAction="#si" prefHeight="26.0" prefWidth="50.0" text="si">
-         <font>
-            <Font name="Serif Regular" size="14.0" />
-         </font></Button>
-      <Button fx:id="no" layoutX="348.0" layoutY="151.0" mnemonicParsing="false" onAction="#no" prefHeight="26.0" prefWidth="50.0" text="no">
-         <font>
-            <Font name="Serif Regular" size="14.0" />
-         </font></Button>
-      <Label fx:id="pregunta" layoutX="111.0" layoutY="47.0" prefHeight="48.0" prefWidth="721.0">
-         <font>
-            <Font name="Serif Regular" size="14.0" />
-         </font></Label>
-      <Text fx:id="volver" layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volver" />
-   </children>
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="700.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.Juego1Controller">
+    <children>
+        <!-- Fondo de la Pantalla -->
+        <ImageView fitHeight="540.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@fondo.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- Imagen de Akinator -->
+        <ImageView fx:id="imagen" fitHeight="419.0" fitWidth="228.0" layoutX="59.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@akinator.png" />
+            </image>
+        </ImageView>
+
+        <!-- Botón Si -->
+        <Button fx:id="si" layoutX="339.0" layoutY="321.0" mnemonicParsing="false" onAction="#si" prefHeight="76.0" prefWidth="115.0" styleClass="custom-button" text="SI">
+            <font>
+                <Font name="Serif Regular" size="30.0" />
+            </font>
+        </Button>
+
+        <!-- Botón No -->
+        <Button fx:id="no" layoutX="501.0" layoutY="321.0" mnemonicParsing="false" onAction="#no" prefHeight="76.0" prefWidth="115.0" styleClass="custom-button" text="NO">
+            <font>
+                <Font name="Serif Regular" size="30.0" />
+            </font>
+        </Button>
+
+        <!-- Pregunta -->
+        <Label fx:id="pregunta" layoutX="280.0" layoutY="90.0" prefHeight="200.0" prefWidth="400.0" styleClass="custom-label" wrapText="true">
+            <font>
+                <Font name="Serif Regular" size="30.0" />
+            </font>
+        </Label>
+
+
+        <!-- Texto Volver con Estilo Personalizado -->
+        <Text fx:id="volver" layoutX="25.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="custom-volver" text="Volver" wrappingWidth="82.7822265625">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Text>
+    </children>
 </AnchorPane>

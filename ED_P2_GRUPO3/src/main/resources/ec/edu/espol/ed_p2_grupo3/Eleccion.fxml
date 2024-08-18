@@ -9,30 +9,54 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.EleccionController">
-   <children>
-      <ImageView fitHeight="260.0" fitWidth="168.0" layoutX="37.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@akinator.png" />
-         </image>
-      </ImageView>
-      <VBox fx:id="vbox" layoutX="279.0" layoutY="115.0" prefHeight="50.0" prefWidth="136.0" />
-      <Label layoutX="225.0" layoutY="70.0" text="Selecciona el número de preguntas">
-         <font>
-            <Font name="Serif Regular" size="14.0" />
-         </font></Label>
-      <Button fx:id="empezar" layoutX="287.0" layoutY="169.0" mnemonicParsing="false" onAction="#empezar" text="Empezar">
-         <font>
-            <Font name="Serif Regular" size="13.0" />
-         </font></Button>
-      <Button fx:id="file1Button" layoutX="383.0" layoutY="272.0" onAction="#uploadFile1" text="Subir archivo de animales">
-         <font>
-            <Font name="Serif Regular" size="13.0" />
-         </font></Button>
-      <Button fx:id="file2Button" layoutX="208.0" layoutY="272.0" onAction="#uploadFile2" text="Subir archivo de preguntas">
-         <font>
-            <Font name="Serif Regular" size="13.0" />
-         </font></Button>
-      <ComboBox fx:id="fileChoiceComboBox" layoutX="225.0" layoutY="14.0" prefWidth="150.0" />
-   </children>
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="700.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.ed_p2_grupo3.EleccionController">
+
+    <children>
+        <!-- Background Image -->
+        <ImageView fitHeight="540.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@fondo.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- Akinator Image -->
+        <ImageView fitHeight="260.0" fitWidth="168.0" layoutX="37.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@akinator.png" />
+            </image>
+        </ImageView>
+
+        <VBox fx:id="vbox" layoutX="279.0" layoutY="115.0" prefHeight="50.0" prefWidth="136.0" />
+      
+        <!-- Selection Label -->
+        <Label layoutX="196.0" layoutY="74.0" styleClass="custom-label" text="Selecciona el número de preguntas" textFill="white">
+            <font>
+                <Font name="Serif Regular" size="14.0" />
+            </font>
+        </Label>
+      
+        <!-- Start Button -->
+        <Button fx:id="empezar" layoutX="252.0" layoutY="212.0" mnemonicParsing="false" onAction="#empezar" styleClass="custom-button" text="Empezar">
+            <font>
+                <Font name="Serif Regular" size="13.0" />
+            </font>
+        </Button>
+      
+        <!-- File Buttons -->
+        <Button fx:id="file1Button" layoutX="205.0" layoutY="318.0" onAction="#uploadFile1" styleClass="custom-button" text="Subir archivo de animales">
+            <font>
+                <Font name="Serif Regular" size="13.0" />
+            </font>
+        </Button>
+      
+        <Button fx:id="file2Button" layoutX="202.0" layoutY="271.0" onAction="#uploadFile2" styleClass="custom-button" text="Subir archivo de preguntas">
+            <font>
+                <Font name="Serif Regular" size="13.0" />
+            </font>
+        </Button>
+      
+        <!-- File Selection ComboBox -->
+        <ComboBox fx:id="fileChoiceComboBox" layoutX="217.0" layoutY="23.0" prefWidth="150.0" styleClass="custom-combobox" />
+
+    </children>
 </AnchorPane>

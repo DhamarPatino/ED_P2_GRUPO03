@@ -1,5 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license/default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package ec.edu.espol.ed_p2_grupo3;
@@ -7,10 +7,9 @@ package ec.edu.espol.ed_p2_grupo3;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -21,7 +20,7 @@ import javafx.scene.input.MouseEvent;
 public class InicioController implements Initializable {
 
     @FXML
-    private Button inicio;
+    private ImageView inicioButton;
 
     /**
      * Initializes the controller class.
@@ -29,11 +28,15 @@ public class InicioController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
-    private void start(ActionEvent event) throws IOException {
-        App.setRoot("Eleccion");
+    private void start(MouseEvent event) {
+        try {
+            App.setRoot("Eleccion");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-    
 }
+
