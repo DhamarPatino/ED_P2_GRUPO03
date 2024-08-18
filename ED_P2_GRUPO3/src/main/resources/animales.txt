@@ -16,17 +16,17 @@ Coyote si si no si no
 Serpiente no si no no no
 Nutria si no si no si
 Buho no si no si no
-Gato Montes si si si no si
+Gato-Montes si si si no si
 Gorila si no si si no
 Jirafa si no si no no
 Oso si si si si no
 Bufalo si si si no no
 Camello si no si no si
 Hiena si si no no no
-Murcielago Frugivoro si no no si no
+Murcielago-Frugivoro si no no si no
 Elefante si si no no si
 Pajaro no no no si no
 Tigre si si si no no
-Cebra de Montana si si si no no
+Cebra-Montana si si si no no
 Murcielago si no no si no
 Pinguino si no no no si
