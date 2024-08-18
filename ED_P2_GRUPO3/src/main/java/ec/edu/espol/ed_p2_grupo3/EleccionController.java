@@ -55,15 +55,21 @@ public class EleccionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Inicializa el Spinner con un valor predeterminado
-        Spinner<Integer> spinner = new Spinner<>(1, maxnumber, 1);
-        spinner.valueProperty().addListener((observable, oldValue, newValue) -> selectedNumber = newValue);
-        selectedNumber = spinner.getValue();
+        Spinner<Integer> spinner = new Spinner<>(1, 10, 1);
+
+        // Imprime el valor inicial para verificar
+        System.out.println("Valor inicial del Spinner: " + spinner.getValue());
+
+        spinner.valueProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("Nuevo valor seleccionado: " + newValue); // Imprime el nuevo valor
+        });
+
+        // Asegúrate de que `vbox` esté en la escena
         vbox.getChildren().add(spinner);
 
         // Inicializa el ComboBox con dos opciones
         fileChoiceComboBox.getItems().addAll("Subir archivos nuevos", "Usar archivo predeterminado");
-        fileChoiceComboBox.getSelectionModel().selectFirst();
-        fileChoiceComboBox.getSelectionModel().select("Usar archivo predeterminado");
+        fileChoiceComboBox.getSelectionModel().select("Usar archivo predeterminado"); // Selección por defecto
         file1Button.setDisable(true);
         file2Button.setDisable(true);
         cargarArchivosPredeterminados();
@@ -169,7 +175,10 @@ public class EleccionController implements Initializable {
 
             vbox.getChildren().clear();
             Spinner<Integer> spinner = new Spinner<>(1, maxnumber, 1);
-            spinner.valueProperty().addListener((observable, oldValue, newValue) -> selectedNumber = newValue);
+            spinner.valueProperty().addListener((observable, oldValue, newValue) -> {
+                System.out.println("Nuevo valor seleccionado: " + newValue); // Imprime el nuevo valor
+                App.setPreguntas(newValue);
+            });
             vbox.getChildren().add(spinner);
         } catch (IOException e) {
             e.printStackTrace();

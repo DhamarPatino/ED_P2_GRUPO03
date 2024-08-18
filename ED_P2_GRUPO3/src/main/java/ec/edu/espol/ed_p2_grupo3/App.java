@@ -19,7 +19,15 @@ import java.util.Scanner;
 public class App extends Application {
      private int nPreguntas;
     private static Scene scene;
+    private static int preguntas;
 
+    public static void setPreguntas(int preguntas) {
+        App.preguntas = preguntas;
+    }
+
+    public static int getPreguntas() {
+        return preguntas;
+    }
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("inicio"), 524, 540);

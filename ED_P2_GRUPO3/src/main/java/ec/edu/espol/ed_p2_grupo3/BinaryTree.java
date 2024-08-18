@@ -126,4 +126,23 @@ public class BinaryTree<E> {
             }
         }
     }
+    public void insertIntoTree(HashMap<String, ArrayList<String>> data) {
+        for (String key : data.keySet()) {
+            ArrayList<String> path = data.get(key);
+            NodeBinaryTree<E> current = root;
+            for (String direction : path) {
+                if (direction.equals("si")) {
+                    if (current.getLeft() == null) {
+                        current.setLeft( new BinaryTree<E>((NodeBinaryTree<E>) new NodeBinaryTree<String>(key))); // Crear nodo vacío si no existe
+                    }
+                    current = current.getLeft().getRoot();
+                } else if (direction.equals("no")) {
+                    if (current.getRight() == null) {
+                        current.setRight( new BinaryTree<E>((NodeBinaryTree<E>) new NodeBinaryTree<String>(key))); // Crear nodo vacío si no existe
+                    }
+                    current = current.getRight().getRoot();
+                }
+            }
+        }
+    }
 }

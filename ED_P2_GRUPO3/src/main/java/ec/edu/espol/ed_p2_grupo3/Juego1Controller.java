@@ -41,7 +41,7 @@ public class Juego1Controller implements Initializable {
     private BinaryTree<String> arbol;
     private NodeBinaryTree<String> currentNode;
     private ArrayList<String> images;
-    public int preguntas = 6;
+    public int preguntas = App.getPreguntas();
     private int preguntaCounter = 0;  // Contador de preguntas
 
     @Override
@@ -65,6 +65,7 @@ public class Juego1Controller implements Initializable {
             arbol = new BinaryTree<>();
             arbol.construirArbolDePreguntas(preguntas);
             currentNode = arbol.getRoot();
+            arbol.insertIntoTree(respuestas);
             arbol.recorrerPreorden();
             // Mensaje para verificar el nodo raíz
             if (currentNode != null) {
@@ -101,6 +102,8 @@ public class Juego1Controller implements Initializable {
                 showPossibleAnimals();
             }
         }
+        System.out.println("preguntas: "+preguntas);
+        System.out.println(preguntaCounter);
         changeImage();
     }
 
@@ -118,6 +121,7 @@ public class Juego1Controller implements Initializable {
                 showPossibleAnimals();
             }
         }
+        System.out.println(preguntaCounter);
         changeImage();
     }
 
@@ -130,6 +134,7 @@ public class Juego1Controller implements Initializable {
     }
 
     private void showPossibleAnimals() {
+        System.out.println("mostrar respuestas");
         List<String> possibleAnimals = collectAnimals(currentNode);
         pregunta.setText("Animales posibles: " + String.join(", ", possibleAnimals));
         si.setDisable(true);
@@ -141,13 +146,18 @@ public class Juego1Controller implements Initializable {
         if (node == null) {
             return animals;
         }
+
+        // Si es una hoja, añadir el contenido
         if (node.getLeft() == null && node.getRight() == null) {
-            // Es una hoja
             animals.add(node.getContent());
         } else {
-            // Recorrer ambos subárboles
-            animals.addAll(collectAnimals(node.getLeft().getRoot()));
-            animals.addAll(collectAnimals(node.getRight().getRoot()));
+            // Recorrer ambos subárboles si existen
+            if (node.getLeft() != null) {
+                animals.addAll(collectAnimals(node.getLeft().getRoot()));
+            }
+            if (node.getRight() != null) {
+                animals.addAll(collectAnimals(node.getRight().getRoot()));
+            }
         }
         return animals;
     }
