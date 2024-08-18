@@ -1,5 +1,10 @@
-¿Es este animal un mamifero?
+¿Es este animal un mamífero?
 ¿Es este animal un carnívoro?
 ¿Se para este animal sobre cuatro patas?
 ¿Puede volar este animal?
 ¿Vive este animal en el agua?
+¿Es este animal un depredador?
+¿Tiene este animal pelaje?
+¿Tiene este animal escamas?
+¿Es este animal nocturno?
+¿Es este animal más grande que un ser humano?

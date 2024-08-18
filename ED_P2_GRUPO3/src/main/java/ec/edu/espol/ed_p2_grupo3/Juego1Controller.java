@@ -38,12 +38,12 @@ public class Juego1Controller implements Initializable {
 
     @FXML
     private Label pregunta;
-
+    ArrayList<String> preguntas;
     private int currentIndex = 0;
     private BinaryTree<String> arbol;
     private NodeBinaryTree<String> currentNode;
     private ArrayList<String> images;
-    public int preguntas = App.getPreguntas();
+    public int preguntasUser = App.getPreguntas();
     private int preguntaCounter = 0;  // Contador de preguntas
     @FXML
     private Text volver;
@@ -60,13 +60,13 @@ public class Juego1Controller implements Initializable {
 
         try {
             // Verificar que el archivo de preguntas y respuestas existe y se carga correctamente
-            ArrayList<String> preguntas = Juego.cargarPreguntas("src/main/resources/preguntas.txt");
+            preguntas = Juego.cargarPreguntas("src/main/resources/preguntas.txt");
             System.out.println("Preguntas cargadas: " + preguntas);
             HashMap<String, ArrayList<String>> respuestas = Juego.cargarRespuestas("src/main/resources/animales.txt");
             System.out.println("Respuestas cargadas: " + respuestas);
             System.out.println("arbol: ");
             arbol = new BinaryTree<>();
-            arbol.construirArbolDePreguntas(preguntas);
+            arbol.construirArbolDePreguntas(preguntas,App.getPreguntas());
             currentNode = arbol.getRoot();
             arbol.insertIntoTree(respuestas);
             arbol.recorrerPreorden();
@@ -103,7 +103,7 @@ public class Juego1Controller implements Initializable {
 
     @FXML
     private void si(ActionEvent event) {
-        if (currentNode != null && preguntaCounter < preguntas) {
+        if (currentNode != null && preguntaCounter < preguntasUser) {
             preguntaCounter++;
             if (currentNode.getLeft() != null) {
                 currentNode = currentNode.getLeft().getRoot();
@@ -111,18 +111,18 @@ public class Juego1Controller implements Initializable {
             } else {
                 pregunta.setText("¡Has terminado o no hay más preguntas!");
             }
-            if (preguntaCounter >= preguntas) {
+            if (preguntaCounter >= preguntasUser) {
                 showPossibleAnimals();
             }
         }
-        System.out.println("preguntas: "+preguntas);
+        System.out.println("preguntas: "+preguntasUser);
         System.out.println(preguntaCounter);
         changeImage();
     }
 
     @FXML
     private void no(ActionEvent event) {
-        if (currentNode != null && preguntaCounter < preguntas) {
+        if (currentNode != null && preguntaCounter < preguntasUser) {
             preguntaCounter++;
             if (currentNode.getRight() != null) {
                 currentNode = currentNode.getRight().getRoot();
@@ -130,7 +130,7 @@ public class Juego1Controller implements Initializable {
             } else {
                 pregunta.setText("¡Has terminado o no hay más preguntas!");
             }
-            if (preguntaCounter >= preguntas) {
+            if (preguntaCounter >= preguntasUser) {
                 showPossibleAnimals();
             }
         }
@@ -162,7 +162,11 @@ public class Juego1Controller implements Initializable {
 
         // Si es una hoja, añadir el contenido
         if (node.getLeft() == null && node.getRight() == null) {
-            animals.add(node.getContent());
+            if(!preguntas.contains(node.getContent())){
+                animals.add(node.getContent());
+            }else{
+                animals.add("no se tiene informacion del animal");
+            }
         } else {
             // Recorrer ambos subárboles si existen
             if (node.getLeft() != null) {

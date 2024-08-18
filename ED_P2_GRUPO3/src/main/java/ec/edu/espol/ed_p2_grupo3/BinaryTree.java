@@ -52,12 +52,12 @@ public class BinaryTree<E> {
 
     // Construye el árbol binario a partir de las preguntas y respuestas dadas
     
-      public void construirArbolDePreguntas(ArrayList<E> preguntas) {
-        this.setRoot(construirNodo(preguntas, 0));
+    public void construirArbolDePreguntas(ArrayList<E> preguntas,int preguntasUser) {
+        this.setRoot(construirNodo(preguntas, 0,preguntasUser));
     }
 
-    private NodeBinaryTree<E> construirNodo(ArrayList<E> preguntas, int index) {
-        if (index >= preguntas.size()) {
+    private NodeBinaryTree<E> construirNodo(ArrayList<E> preguntas, int index,int preguntasUser) {
+        if (index >= preguntas.size() && index>= preguntasUser) {
             return null;
         }
 
@@ -66,9 +66,9 @@ public class BinaryTree<E> {
         nodo = new NodeBinaryTree<>(preguntas.get(index));
 
         // Construir los hijos solo si hay más preguntas disponibles
-        if (index + 1 < preguntas.size()) {
-            nodo.setLeft(new BinaryTree<>(construirNodo(preguntas, index + 1)));
-            nodo.setRight(new BinaryTree<>(construirNodo(preguntas, index + 1)));
+        if (index + 1 < preguntas.size() && index+1<preguntasUser) {
+            nodo.setLeft(new BinaryTree<>(construirNodo(preguntas, index + 1,preguntasUser)));
+            nodo.setRight(new BinaryTree<>(construirNodo(preguntas, index + 1,preguntasUser)));
         }
 
         return nodo;

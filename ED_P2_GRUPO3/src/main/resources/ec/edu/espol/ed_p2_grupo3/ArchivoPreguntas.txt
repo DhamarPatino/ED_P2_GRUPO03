@@ -1,5 +1,15 @@
-¿Es este animal un mamifero?
-¿Es este animal un carnívoro?
-¿Se para este animal sobre cuatro patas?
-¿Puede volar este animal?
-¿Vive este animal en el agua?
+¿Tiene este animal una melena?
+¿Es este animal un roedor?
+¿Tiene este animal alas?
+¿Puede este animal nadar?
+¿Tiene este animal una piel áspera?
+¿Es este animal un omnívoro?
+¿Tiene este animal patas cortas?
+¿Es este animal un marsupial?
+¿Puede este animal saltar alto?
+¿Es este animal un primate?
+¿Es este animal un felino?
+¿Tiene este animal colmillos?
+¿Es este animal un herbívoro?
+¿Puede este animal correr rápido?
+¿Tiene este animal un caparazón?

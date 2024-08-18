@@ -1,32 +1,15 @@
-Leon si si si no no
-Delfin si si no no si
-Aguila no si no si no
-Rana no no no no si
-Murcielago si no no si no
-Ballena si no no no si
-Canguro si no si no no
-Pinguino no no no no si
-Tiburon no si no no si
-Pato no no no si si
-Cebra si no si no no
-Loro no no no si no
-Flamenco no no si si no
-Gato si si no no no
-Coyote si si no si no
-Serpiente no si no no no
-Nutria si no si no si
-Buho no si no si no
-Gato-Montes si si si no si
-Gorila si no si si no
-Jirafa si no si no no
-Oso si si si si no
-Bufalo si si si no no
-Camello si no si no si
-Hiena si si no no no
-Murcielago-Frugivoro si no no si no
-Elefante si si no no si
-Pajaro no no no si no
-Tigre si si si no no
-Cebra-Montana si si si no no
-Murcielago si no no si no
-Pinguino si no no no si
+León si si si no no si si no no si
+Delfín si si no no si si no no no si
+Águila no si no si no si no no no no
+Rana no si no si no si no no no no
+Murciélago si no no si no si si no si no
+Camaleón no no si no no no no si no no
+Pingüino no no si no si si no no no no
+Elefante si no si no no no si no no si
+Serpiente no si no no no si no si si no
+Canguro si no si no no no si no no si
+Tigre si si si no no si si no no si
+Ballena si no no no si si no no no si
+Paloma no no no si no no no no no no
+Tortuga no no si no si no no no no no
+Murciélago si no no si no si si no si no

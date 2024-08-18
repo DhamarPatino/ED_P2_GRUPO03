@@ -1,5 +1,46 @@
-León si si si no no
-Delfín si si no no si
-Águila no si no si no
-Rana no no no no si
-Murciélago si no no si no
+León si no no no no no no no no no si si no si no
+León si no no no no no no no si si si no si no no
+León si no no no no no no si no si si no si no no
+León si no no no no no si no si si si no si no no
+Delfin no no no si no si no no no no no si no si no
+Delfin no no no si no no no no no no no no no si no
+Delfin no no si si no no no no no no no no no si no
+Delfin no no si si no no no no no no no si no si no
+Aguila no no si no no si no no no no no si no si no
+Aguila no no si no no no no no no no no si no si no
+Aguila no no si si no no no no no no no si no si no
+Rana no no no si si si si no si no no no no no no
+Rana no no no si no no no no si no no no no no no
+Rana no no no si si no no no si no no no no no no
+Murcielago no no si no no si no no si no no si no no no
+Murcielago no no si no no no no no si no no no no no no
+Murcielago no no si si no no no no si no no no no no no
+Camaleon no no no no si si si no no no no no no no no
+Camaleon no no no no si no no no no no no no no no no
+Pinguino no no si si no no si no no no no no no no no
+Pinguino no no si si no no si no no no no no no no no
+Pinguino no si si si no no si no no no no no no no no
+Elefante no no no no si no no no no no no si si no no
+Elefante no no no no no no si no no no no no si no no
+Elefante no si no no no no si no no no no no si no no
+Serpiente no no no no si no si no no no no si no no no
+Serpiente no no no no no no no no no no no si no no no
+Serpiente no si no no no no no no no no no si no no no
+Canguro no no no no no no no si si no no no si si no
+Canguro no no no no no no no si si no no no no si no
+Canguro no si no no no no no si si no no no no si no
+Tigre no no no no no no no no no no si si no si no
+Tigre si no no no no no no no no no si si no si no
+Tigre si si no no no no no no no no si si no si no
+Tiburon no no no si si no no no no no no si no si no
+Tiburon no no no si no no no no no no no si no si no
+Tiburon no si no si no no no no no no no si no si no
+Colibri no no si no no si no no si no no no no si no
+Colibri no no si no no no no no si no no no no si no
+Colibri no si si no no no no no si no no no no si no
+Zorro no no no no no si no no no no si si no si no
+Zorro no no no no no no no no no no no si no si no
+Zorro no si no no no no no no no no no si no si no
+Ballena no no no si no no no no no no no si no no no
+Ballena no no no si no no no no no no no no no no no
+Ballena no si no si no no no no no no no no no no no
