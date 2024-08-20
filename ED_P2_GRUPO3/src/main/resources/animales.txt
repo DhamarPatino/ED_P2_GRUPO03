@@ -1,15 +1,50 @@
-León si si si no no si si no no si
-Delfín si si no no si si no no no si
-Águila no si no si no si no no no no
-Rana no si no si no si no no no no
-Murciélago si no no si no si si no si no
-Camaleón no no si no no no no si no no
-Pingüino no no si no si si no no no no
-Elefante si no si no no no si no no si
-Serpiente no si no no no si no si si no
-Canguro si no si no no no si no no si
-Tigre si si si no no si si no no si
-Ballena si no no no si si no no no si
-Paloma no no no si no no no no no no
-Tortuga no no si no si no no no no no
-Murciélago si no no si no si si no si no
+León si si si no no no si si no si no no no si no
+Tiburón no si no no si no no si si si no no no no no
+Águila no si no si no no si no no si si no no no no
+Canguro si no si no no no no no no no si no no no si
+Camaleón no no no no no si no no si no no no si no no
+Elefante si no si no no no no si no no no no no no si
+Murciélago si si si si no si si no no si no si no no no
+Serpiente no si no no no no no si si si no no si no no
+Ballena si no no no si no no si no no no no no no si
+Tigre si si si no no si si si no si si no no si no
+Oso si si si no no no si si no no si si no si no
+Cocodrilo no si no no si no no si si si no no si no no
+Puma si si si no no no si si no si si si no si no
+Zorro si si si no no si si no no no si no no si no
+Pingüino no no si no si no no no no no no no no no si
+Hipopótamo si no si no si no no no no no si no no si no
+Rinoceronte si no si no no si no no no no si no si no no
+Gorila si no si no no no si no no si no no no si si
+Búho no si no si no no si no no no si si no no no
+Jaguar si si si no no si si si si si no no no si no
+Delfín si no no no si si no no no si no no no no si
+Cobra no si no no no no no si si no si no si no no
+Lince si si si no no si no no si no si no no si si
+Tortuga no no si no si no no si no no no no si no si
+Cebra si no si no no no no no no no si si no si si
+Panda si si si no no no si si no no no no no si no
+Coyote si si si no no si si no si no si no no si no
+Mono si no si si no no si no no no no no si si si
+Orangután si si no si no no si no no si no no no si si
+Flamenco no no si si no no no no no si si no no no si
+Tarántula no no no no no no no si si no no si no no no
+Gato si si si no no si si no no no no si no si no
+Caballo si no si no no no si no no no si si no si si
+Lobo si si si no no si si no no si si no no si no
+Ocelote si si si no no si si no si si no no no si no
+Hiena si si si no no si si no no si no si no si no
+Ardilla si no no no no no no no no no si no no si si
+Jirafa si no si no no no si no no no si no no si no
+Pez_Globo no si no no si no no si no no no no si no no
+Llama si no si no no no no no no no si no no si no
+Mapache si si si no no si no no no no si si no si no
+Iguana no no no no no si no si no no no no si no no
+Carpincho si no si no no no no no no no no si no no si
+Ciervo si no si no no no si no no no si no no si no
+Pavo_Real no no si si no no no no si si no no no no no
+Perezoso si no si no no no no no no no si no no no no
+Orca si no no no si si no no no no no no no no si
+Koala si no si no no no no no no no si no si si no
+Nutria si no no no si no no no no no no no no no si
+Cisne no no si si no no no no no no si no no no no

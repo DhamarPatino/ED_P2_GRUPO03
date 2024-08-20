@@ -1,10 +1,15 @@
 ¿Es este animal un mamífero?
 ¿Es este animal un carnívoro?
-¿Se para este animal sobre cuatro patas?
+¿Tiene este animal pelaje?
 ¿Puede volar este animal?
 ¿Vive este animal en el agua?
-¿Es este animal un depredador?
-¿Tiene este animal pelaje?
-¿Tiene este animal escamas?
 ¿Es este animal nocturno?
+¿Tiene este animal garras?
 ¿Es este animal más grande que un ser humano?
+¿Tiene este animal escamas?
+¿Es este animal un depredador?
+¿Puede este animal saltar alto?
+¿Es este animal un omnívoro?
+¿Es este animal un reptil?
+¿Tiene este animal colmillos?
+¿Es este animal un herbívoro?
